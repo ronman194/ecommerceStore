@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Urbanist } from 'next/font/google'
 import Navbar from '@/components/navbar'
+import { ModalProvider } from '@/providers/modal-provider'
 
 const urbanist = Urbanist({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={urbanist.className}>
+        <ModalProvider />
         <Navbar />
         {children}
         <Footer />
